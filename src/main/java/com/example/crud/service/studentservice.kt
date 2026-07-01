@@ -11,7 +11,8 @@ class StudentService(private val repo : StudentRepo) {
     fun create(student: Student) : Student {
 
 
-        return repo.saveStudent(student)
+       val requestByUser = repo.save(student)
+        return requestByUser
 
     }
 }

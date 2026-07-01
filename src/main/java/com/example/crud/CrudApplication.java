@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })//exclue is used to remove basic error
+@SpringBootApplication//(exclude = { DataSourceAutoConfiguration.class })//exclue is used to remove basic error
 public class CrudApplication {
 
 	public static void main(String[] args) {

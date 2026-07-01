@@ -66,6 +66,17 @@
 			<version>${kotlin.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-reflect</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-maven-allopen</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -96,7 +107,10 @@
 					</execution>
 				</executions>
 				<configuration>
-					<jvmTarget>1.8</jvmTarget>
+					<jvmTarget>17</jvmTarget>
+					<compilerPlugins>
+						<plugin>jpa</plugin>
+					</compilerPlugins>
 				</configuration>
 			</plugin>
 			<plugin>

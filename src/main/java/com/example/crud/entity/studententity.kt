@@ -7,20 +7,20 @@ import org.springframework.context.annotation.Primary
 
 
 @Entity//managed by spring JPA not by sping IOC container
-@Table(name = "StudentDB")
+@Table(name = "cruddb")
 
 
 data class Student
 
     (
     @Id
-    var id: Long,//to tell primary key
+    var id: Long = 0,//to tell primary key
 
 
-    var name: String,
-    var age: Int,
-    var mail :  String,
-    var subject: String
+    var name: String ="name1",
+    var age: Int = 22,
+    var mail :  String = "name@mail.com",
+    var subject: String = "none"
 
 ) {
 
