@@ -91,7 +91,7 @@ class StudentController(
     }
 
     @PatchMapping("/delete-soft")
-    fun softDeleteStudent(id: Long): ResponseEntity<Void> {
+    fun softDeleteStudent(@PathVariable   id: Long): ResponseEntity<Void> {
         val student = studentRepo.findByIdAndDeletedFalse(id)
             ?: return ResponseEntity.notFound().build()
 
