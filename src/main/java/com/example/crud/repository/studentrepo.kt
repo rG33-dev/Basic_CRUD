@@ -4,16 +4,20 @@ import com.example.crud.entity.Student
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Repository
+import java.util.Optional
 
 @Repository
 @Component//optional
 interface StudentRepo : JpaRepository<Student, Long> { //instead of manually writing all functions like save, delete, JPA repo privides all these inbuilt functios.
 
+    fun findByIdAndDeletedFalse(id: Long): Student?
 
-    //USE JPA REPO IN-BUILT TO IMPLEMENT ALL CHANGES IN DATABASE
-    //Changed class to interface to use jpa methods.
-    //Why we dont need to override abstract methods(implemntation) in this file
-    //cause SPRING JPA handles all this by its own
+    fun findAllByDeletedFalse(): List<Student>
+
 }
-
+//USE JPA REPO IN-BUILT TO IMPLEMENT ALL CHANGES IN DATABASE
+//Changed class to interface to use jpa methods.
+//Why we dont need to override abstract methods(implemntation) in this file
+//cause SPRING JPA handles all this by its own
+//JPA can create a QUERY just by Fun name
 

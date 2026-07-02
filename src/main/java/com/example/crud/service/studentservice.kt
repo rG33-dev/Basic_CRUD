@@ -34,15 +34,18 @@ class StudentService(private val repo : StudentRepo) {
         return repo.save(existingStudent)
     }
 
-    fun deleteStudent(id: Long): Boolean {
-        if (!repo.existsById(id)) {
-            return false
-        }
+    fun deleteStudent(id: Long) {
+        val student = repo.findById(id)
+            .orElseThrow { RuntimeException("Student not found") }
 
-            repo.deleteById(id)
-        return true
+        student.deleted = true
+        repo.save(student)
     }
 }
+    fun isDeleted(id: Long) {
+
+    }
+
 
 
 

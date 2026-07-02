@@ -20,8 +20,10 @@ data class Student
     var name: String ="name1",
     var age: Int = 22,
     var mail :  String = "name@mail.com",
-    var subject: String = "none"
+    var subject: String = "none",
+    var deleted: Boolean  = false,
 
-) {
+
+    ) {
 
 }
