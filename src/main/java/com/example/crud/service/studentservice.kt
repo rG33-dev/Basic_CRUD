@@ -26,7 +26,7 @@ class StudentService(private val repo : StudentRepo) {
             ?: return null
 
         existingStudent.name = studentReq.name
-        existingStudent.id = id
+        existingStudent.id
         existingStudent.subject = studentReq.subject
         existingStudent.mail = studentReq.mail
         existingStudent.age = studentReq.age
