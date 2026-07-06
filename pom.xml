@@ -72,6 +72,12 @@
 			<artifactId>kotlin-reflect</artifactId>
 			<version>${kotlin.version}</version>
 		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+
+		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-maven-allopen</artifactId>
@@ -111,6 +117,9 @@
 					<compilerPlugins>
 						<plugin>jpa</plugin>
 					</compilerPlugins>
+					<args>
+						<arg>-Xannotation-default-target=param-property</arg>
+					</args>
 				</configuration>
 			</plugin>
 			<plugin>
